@@ -4,7 +4,7 @@
 
 local function part1()
 	local total = 0 -- Will contain the total of all numbers (the thing we want to find, in other words)
-	local file = assert(io.open("1_trebuchet_input", "r"))
+	local file = assert(io.open("input", "r"))
 	local content = file:read("*l") -- We read the file line by line
 
 	while content do -- While there's a line, do:
@@ -25,14 +25,14 @@ local function part1()
 end
 
 local function part2()
-	local file = assert(io.open("1_trebuchet_input", "r"))
+	local file = assert(io.open("input", "r"))
 	local content = file:read("*l")
 		local total = 0
 	local textDigits = { one = "1", two = "2", three = "3", four = "4", five = "5", six = "6", seven = "7", eight = "8", nine = "9"} -- We'll also work with textual digits, so we link numerical and textual values
 
 	while content do
 		-- We store the start index of the last occurence of every possible textual or numerical number
-		local lastOccurence = {text = {}, nums = {}} 
+		local lastOccurence = {text = {}, nums = {}}
 		for i,j in pairs(textDigits) do
 			lastOccurence.text[i] = 1
 			lastOccurence.nums[j] = 1
